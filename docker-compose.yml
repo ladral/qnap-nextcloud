@@ -1,0 +1,55 @@
+version: "3.7"
+
+services:
+  nextcloud:
+    image: linuxserver/nextcloud:latest
+    container_name: nextcloud
+    networks:
+      - nextcloudnet
+    deploy:
+      resources:
+        limits:
+          cpus: 1.20
+          memory: 4096M
+    environment:
+      - PUID=1002   # dockeruser id
+      - PGID=100    # dockeruser group
+      - TZ=Europe/Zurich
+    volumes:
+      - /share/Docker/nextcloud/config:/config
+      - /share/Docker/nextcloud/data:/data
+    ports:
+      - 9443:443
+    restart: unless-stopped
+    depends_on:
+      - db
+
+  db:
+    image: linuxserver/mariadb:latest
+    container_name: nextcloud_db
+    networks:
+      - nextcloudnet    
+    deploy:
+      resources:
+        limits:
+          cpus: 0.50
+          memory: 1024M   
+    environment:
+      - PUID=1002
+      - PGID=100
+      - MYSQL_ROOT_PASSWORD=db_root-password # replace with own password
+      - TZ=Europe/Zurich
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextclouduser
+      - MYSQL_PASSWORD=db_user_password # replace with own password
+    volumes:
+      - /share/Docker/nextcloud/config_db:/config
+    restart: unless-stopped
+
+networks:
+    nextcloudnet:
+        driver: bridge    
+        ipam:
+          config:
+            - subnet: 10.0.8.0/24
+              gateway: 10.0.8.1 
