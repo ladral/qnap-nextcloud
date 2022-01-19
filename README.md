@@ -42,3 +42,9 @@ uid=500(dockeruser) gid=100(everyone) groups=100(everyone)
 ```
 
 Note the UID and the GID and replace the ID's in the docker-compose.yml file (see comments in the docker-compose file).
+
+
+# Links
+- [Access my QNAP NAS using SSH](https://www.qnap.com/en/how-to/knowledge-base/article/how-do-i-access-my-qnap-nas-using-ssh)
+- [Setup QNAP user for Docker containers](https://www.linuxserver.io/blog/2017-09-17-how-to-setup-containers-on-qnap)
+
