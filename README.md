@@ -21,3 +21,24 @@ Create a new shared folder that we will keep all docker appdata in. Load up "Fil
 Call the folder `Docker` and give full read/write access to this folder to the newly created `dockeruser`. Everything else can be left as default.
 
 ![Folder Privileges](.attachments/FolderPrivileges.png)
+
+Once the `Docker` folder is created, create another folder called `nextcloud` within the `Docker` folder.
+
+
+## Get User IDs
+Now the UID/GID of the user `dockeruser` need to be figured out. Use your favourite method to ssh into the QNAP NAS and run the following command:
+
+```console
+id <username>
+```
+
+Replace <username> with the user you created earlier (dockeruser). The result of the command should look like this:
+
+Result:
+```console
+[~] # id dockeruser
+uid=500(dockeruser) gid=100(everyone) groups=100(everyone)
+[~] #
+```
+
+Note the UID and the GID and replace the ID's in the docker-compose.yml file (see comments in the docker-compose file).
