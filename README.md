@@ -57,6 +57,19 @@ Download the docker-compose.yml from the repository and replace the passwords an
 
 Choose a name for the Container and paste the content of the docker-compose.yml into the YAML section and click on the create button.
 
+## Setup Nextcloud 
+After the container is created, open the nextcloud web interface on https://NAS-IP:9443/
+
+![Nextcloud Settings](.attachments/NextcloudSettings.png)
+
+Fill in the credential for the administrator account.
+
+Select MySQL/MariaDB as database and use the database credentials defined in the docker-compose.yml file.
+(MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE, container_name)
+
+Click `Install` to finish the nextcloud setup.
+
+
 # Links
 - [Access my QNAP NAS using SSH](https://www.qnap.com/en/how-to/knowledge-base/article/how-do-i-access-my-qnap-nas-using-ssh)
 - [Setup QNAP user for Docker containers](https://www.linuxserver.io/blog/2017-09-17-how-to-setup-containers-on-qnap)
