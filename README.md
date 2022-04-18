@@ -62,7 +62,7 @@ After the container is created, open the nextcloud web interface on https://NAS-
 
 ![Nextcloud Settings](.attachments/NextcloudSettings.png)
 
-Fill in the credential for the administrator account.
+Fill in the credentials for the administrator account.
 
 Select MySQL/MariaDB as database and use the database credentials defined in the docker-compose.yml file.
 (MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE, container_name)
