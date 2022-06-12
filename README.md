@@ -70,9 +70,38 @@ Select MySQL/MariaDB as database and use the database credentials defined in the
 Click `Install` to finish the nextcloud setup.
 
 
+## Update Container
+
+To keep everything up to date the containers and the Nextcloud installation have to be updated.
+
+![Stop Container](.attachments/StopContainer.png)
+
+Stop the running Nextcloud container.
+
+![Edit Container](.attachments/EditContainer.png)
+
+Press on `edit` and copy the docker-compose file of the Nextcloud container (which contains the actual passwords, user Id, user group).
+
+![Delete Container](.attachments/DeleteContainer.png)
+
+Press on `delete` to delete the existing Container (Alle user specific data is stored outside of the container).
+
+![Remove Images](.attachments/RemoveImages.png)
+
+Select `Images` from the management menu and remove the images linuxserver/nextcloud and linuxserver/mariadb.
+
+![Container Creation](.attachments/ContainerCreation.png)
+
+Select `Create` from the management menu. Click on the `Create Application` button.
+
+![Create Container Application](.attachments/CreateContainerApplication.png)
+
+Choose a name for the Container and paste the previously copied docker-compose file into the YAML section and click on the create button.
+
+After the container is created, it uses the latest images.
+
+
 # Links
 - [Access my QNAP NAS using SSH](https://www.qnap.com/en/how-to/knowledge-base/article/how-do-i-access-my-qnap-nas-using-ssh)
 - [Setup QNAP user for Docker containers](https://www.linuxserver.io/blog/2017-09-17-how-to-setup-containers-on-qnap)
 - [How to use Container Station](https://www.qnap.com/en/how-to/tutorial/article/how-to-use-container-station)
-
-
