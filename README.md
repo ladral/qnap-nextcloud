@@ -105,3 +105,7 @@ After updating the container open the nextcloud web interface on https://NAS-IP:
 - [Access my QNAP NAS using SSH](https://www.qnap.com/en/how-to/knowledge-base/article/how-do-i-access-my-qnap-nas-using-ssh)
 - [Setup QNAP user for Docker containers](https://www.linuxserver.io/blog/2017-09-17-how-to-setup-containers-on-qnap)
 - [How to use Container Station](https://www.qnap.com/en/how-to/tutorial/article/how-to-use-container-station)
+- [Upgrade Nextcloud via built-in updater](https://docs.nextcloud.com/server/latest/admin_manual/maintenance/update.html)
+- [Blog post regarding Nextcloud updates with linuxserver/nextcloud container](https://discourse.linuxserver.io/t/upgrading-nextcloud/400)
+- [Container documentation linuxserver/nextcloud](https://docs.linuxserver.io/images/docker-nextcloud)
+- [Container documentation linuxserver/mariadb](https://docs.linuxserver.io/images/docker-mariadb)
