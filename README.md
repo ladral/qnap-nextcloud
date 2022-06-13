@@ -69,9 +69,7 @@ Select MySQL/MariaDB as database and use the database credentials defined in the
 
 Click `Install` to finish the nextcloud setup.
 
-
 ## Update Container
-
 To keep everything up to date the containers and the Nextcloud installation have to be updated.
 
 ![Stop Container](.attachments/StopContainer.png)
@@ -100,6 +98,8 @@ Choose a name for the Container and paste the previously copied docker-compose f
 
 After the container is created, it uses the latest images.
 
+## Update Nextcloud
+After updating the container open the nextcloud web interface on https://NAS-IP:9443/ and login as administrator. Go to the settings and use the built-in updater to update the Nextcloud installation. See the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/maintenance/update.html) for more details.
 
 # Links
 - [Access my QNAP NAS using SSH](https://www.qnap.com/en/how-to/knowledge-base/article/how-do-i-access-my-qnap-nas-using-ssh)
