@@ -49,7 +49,7 @@ Create a new container based on the docker-compose.yml file.
 
 ![Container Creation](.attachments/ContainerCreation.png)
 
-Open the `Container Station` and select `Create` from the management menu. Click on the `Create Application` button.
+Open the `Container Station` and select `Applications` from the management menu. Click on the `Create` button.
 
 ![Create Container Application](.attachments/CreateContainerApplication.png)
 
@@ -70,33 +70,17 @@ Select MySQL/MariaDB as database and use the database credentials defined in the
 Click `Install` to finish the Nextcloud setup.
 
 ## Update Container
-To keep everything up to date the containers and the Nextcloud installation have to be updated.
+To keep everything up to date the containers need to be updated frequently.
 
-![Stop Container](.attachments/StopContainer.png)
+![Pull Images](.attachments/ImagePull.png)
+Select `Images` from the management menu and pull the latest images for mariadb and nextcloud.
 
-Stop the running Nextcloud container.
-
-![Edit Container](.attachments/EditContainer.png)
-
-Press on `edit` and copy the docker-compose file of the Nextcloud container (which contains the actual passwords, user Id, user group).
-
-![Delete Container](.attachments/DeleteContainer.png)
-
-Press on `delete` to delete the existing Container (Alle user specific data is stored outside of the container).
+![Recreate Application](.attachments/RecreateApplication.png)
+Select `Applications` from the management menu and recreate the application.
 
 ![Remove Images](.attachments/RemoveImages.png)
+Select `Images` from the management menu and remove the **unused** images linuxserver/nextcloud and linuxserver/mariadb.
 
-Select `Images` from the management menu and remove the images linuxserver/nextcloud and linuxserver/mariadb.
-
-![Container Creation](.attachments/ContainerCreation.png)
-
-Select `Create` from the management menu. Click on the `Create Application` button.
-
-![Create Container Application](.attachments/CreateContainerApplication.png)
-
-Choose a name for the Container and paste the previously copied docker-compose file into the YAML section and click on the create button.
-
-After the container is created, it uses the latest images.
 
 ## Update Nextcloud
 To update Nextcloud, it is not possible to do so directly from the web interface. Instead, the update process involves pulling the new image and recreating the container with it. When the container starts up, it automatically detects if an update is required and performs it accordingly.
