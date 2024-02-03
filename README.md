@@ -87,6 +87,22 @@ To update Nextcloud, it is not possible to do so directly from the web interface
 
 It's important to note that Nextcloud can only be upgraded one major version at a time. For example, if you want to upgrade from version 26 to 28, you will first need to upgrade from version 26 to 27, and then from 27 to 28. In such cases, you will need to recreate the container with a specific version tag instead of using the latest tag. Once you have reached the latest major version, you can switch back to using the latest tag for updates.
 
+## Nextcloud Maintenance
+Occasionally, you may encounter missing database (DB) indices in your Nextcloud setup. These missing indices can be identified within the Nextcloud web interface, specifically in the administrative settings section.
+
+To simplify the process of addressing missing DB indices, it is recommended to run the commands within Container Station. Container Station provides a convenient environment for executing commands related to a container. By utilizing Container Station, you can easily run the 'occ db:add-missing-indices' command and ensure that any missing indices are added promptly.
+
+![Nextcloud Container](.attachments/NextcloudContainer.png)
+Select `Container` from the management menu and select the nextcloud container.
+
+![Execute](.attachments/Execute.png)
+Select `Execute` from the upper menu of the nextcloud container.
+
+![Add Execution](.attachments/AddExecution.png)
+Select `Add` and insert the command you wish to execute. For example, you can use the command `occ db:add-missing-indices`. This command will ensure that any missing indices in the database are added. 
+Once you have inserted the command, click on the `Save` button to save it. Now, you can execute the command. 
+If you need to re-execute the command in the future, don't worry! The command is now saved and can be easily accessed. Simply navigate to the saved commands section and select the desired command. It will be executed again, allowing you to perform the necessary actions whenever required.
+
 
 ## Migrate to Container Station 3
 Starting from Container Station 3, it is no longer possible to set resource limits directly within the docker-compose file. 
