@@ -101,6 +101,22 @@ After the container is created, it uses the latest images.
 ## Update Nextcloud
 After updating the container open the Nextcloud web interface on https://NAS-IP:9443/ and login as administrator. Go to the settings and use the built-in updater to update the Nextcloud installation. See the [Nextcloud documentation](https://docs.nextcloud.com/server/latest/admin_manual/maintenance/update.html) for more details.
 
+## Migrate to Container Station 3
+Starting from Container Station 3, it is no longer possible to set resource limits directly within the docker-compose file. 
+As a result, it is important to remove all deploy sections from the docker-compose file to ensure that the containers start successfully.
+
+```yaml
+# remove this section 
+    deploy:
+      resources:
+        limits:
+          cpus: 1.20
+          memory: 4096M
+```
+Resource limits can be manually configured in the advanced settings. This allows you to define specific limits for CPU usage and memory allocation.
+
+![Create Container Application](.attachments/ContainerStationResourceLimits.png)
+
 # Links
 - [Access my QNAP NAS using SSH](https://www.qnap.com/en/how-to/knowledge-base/article/how-do-i-access-my-qnap-nas-using-ssh)
 - [Setup QNAP user for Docker containers](https://www.linuxserver.io/blog/2017-09-17-how-to-setup-containers-on-qnap)

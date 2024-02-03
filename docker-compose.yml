@@ -6,11 +6,6 @@ services:
     container_name: nextcloud
     networks:
       - nextcloudnet
-    deploy:
-      resources:
-        limits:
-          cpus: 1.20
-          memory: 4096M
     environment:
       - PUID=1002   # dockeruser id
       - PGID=100    # dockeruser group
@@ -28,12 +23,7 @@ services:
     image: linuxserver/mariadb:latest
     container_name: nextcloud_db
     networks:
-      - nextcloudnet    
-    deploy:
-      resources:
-        limits:
-          cpus: 0.50
-          memory: 1024M   
+      - nextcloudnet
     environment:
       - PUID=1002
       - PGID=100
